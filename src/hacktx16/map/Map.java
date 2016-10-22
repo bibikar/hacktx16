@@ -1,8 +1,13 @@
 package hacktx16.map;
 
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.imageio.ImageIO;
 
 import hacktx16.entity.Entity;
 
@@ -56,4 +61,12 @@ public class Map {
 			e.draw(g);
 	}
 	
+	public void Background(){
+	BufferedImage img = null;{
+		try {
+			img = ImageIO.read(new URL("http://imgur.com/a/dpOLj"));
+		} catch (IOException e) {
+			System.out.println("WRONG BACKGROUND");		
+		}}
+	}
 }
