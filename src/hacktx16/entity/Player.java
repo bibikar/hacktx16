@@ -1,10 +1,9 @@
 package hacktx16.entity;
 
 import java.awt.Graphics2D;
-public class Player extends Entity{
 
-	
-	
+
+public class Player extends Entity{
 	public Player(int lives, String name, int maxHealth, int damage, double xPos, double yPos, double xVel, double yVel){
 		this.lives = lives;
 		this.name = name;
@@ -14,29 +13,24 @@ public class Player extends Entity{
 		this.yPos = yPos;
 		this.xVel = xVel;
 		this.yVel = yVel;
-		
-		
+		this.health = maxHealth;
 	}
 	public int attack(){
 		return (int) (Math.random()*((damage+2)-(damage-2)) + (damage-2));
 	}
-	
-	void cHealth(int hp){
-		setMaxHealth(100);
-	}
-	
+
 	public void damageTaken(Entity monster){
 		
 		int attackValue = monster.getDamage();
-		
-		
-		
-		
+		if (health > attackValue)
+			health = health - attackValue;
+		else
+			health = 0;
+		if (health == 0){
+			lives --;
+			System.out.println("you dead");	
+		}
 	}
-	void speed(int spd){
-		setxVel(spd);
-	}
-	
 	
 	@Override
 	public void tick() {

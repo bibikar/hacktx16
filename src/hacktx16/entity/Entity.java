@@ -15,12 +15,20 @@ public abstract class Entity {
 	double xPos, yPos;
 	double xVel, yVel;
 	
+	
 	public abstract void draw(Graphics2D g);
 		
 	
 	public abstract void tick();
 		// assuming constant N ticks/second
 	
+	public String getName(){
+		return name;
+	}
+	public void setName(String name){
+		this.name=name;
+		
+	}
 	public int getDamage() {
 		return damage;
 	}
