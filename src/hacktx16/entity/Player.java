@@ -1,25 +1,6 @@
 package hacktx16.entity;
 
 import java.awt.Graphics2D;
-
-<<<<<<< HEAD
-public class Player extends Entity{
-	public Player() {
-		
-	}
-	
-	void cHealth(int hp){
-		setHealth(100);
-	}
-	
-	void damageTaken(int dmg){
-		setHealth(getHealth() - dmg);
-	}
-	void speed(int spd){
-		setxVel(spd);
-	}
-=======
-
 public class Player extends Entity{
 
 	
@@ -56,7 +37,6 @@ public class Player extends Entity{
 		setxVel(spd);
 	}
 	
->>>>>>> refs/remotes/origin/master
 	
 	@Override
 	public void tick() {
