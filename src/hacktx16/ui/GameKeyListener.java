@@ -8,22 +8,29 @@ import javax.swing.JTextField;
 
 public abstract class GameKeyListener extends JFrame implements KeyListener{
 	
-	JTextField x = new JTextField(80);
-	
-	GameKeyListener(){
-	x.addKeyListener(this);
-	setSize(500,500);
-	setVisible(true);
-	setLocationRelativeTo(null);
-	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
-	}
-	
 	public void keyTyped(KeyEvent e){
 		
 	}
 	public void keyPressed(KeyEvent e){
-		
-	}
+		int keypress = e.getKeyCode();
+		if(keypress == KeyEvent.VK_D){
+			//go forward method.
+		}
+		if(keypress == KeyEvent.VK_W){
+			//jump method.
+		}
+		if(keypress == KeyEvent.VK_A){
+			//go left method.
+		}
+		if(keypress == KeyEvent.VK_SPACE){
+			//fire gun method.
+		}
+		if(keypress == KeyEvent.VK_P){
+			//pause game method
+		}
+		else{
+			//do nothing method. 
+		}
 	public void keyReleased(KeyEvent txt){
 		
 	}
