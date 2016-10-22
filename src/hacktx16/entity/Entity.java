@@ -3,7 +3,10 @@ package hacktx16.entity;
 import java.awt.Graphics2D;
 
 public abstract class Entity {
+	String name; 
 	
+	
+	//name, hp, attack, vel, pos, 
 	int health, maxHealth;
 	int damage;
 	int lives;
