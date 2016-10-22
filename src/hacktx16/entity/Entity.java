@@ -1,17 +1,31 @@
 package hacktx16.entity;
 
+import java.awt.Graphics2D;
+
 public abstract class Entity {
 	
 	int health, maxHealth;
-	double x, y;
+	int damage;
+	int lives;
+	
+	int attack;
 	double xPos, yPos;
 	double xVel, yVel;
-	double xAccel, yAccel;
+	
+	public abstract void draw(Graphics2D g);
+		
 	
 	public abstract void tick();
 		// assuming constant N ticks/second
-
-
+	
+	public int getDamage() {
+		return damage;
+	}
+	
+	public void setDamage(int damage) {
+		this.damage = damage;
+	}
+	
 	public int getHealth() {
 		return health;
 	}
@@ -27,21 +41,18 @@ public abstract class Entity {
 	public void setMaxHealth(int maxHealth) {
 		this.maxHealth = maxHealth;
 	}
-
-	public double getX() {
-		return x;
+	
+	public int getAttack() {
+		return attack;
 	}
-
-	public void setX(double x) {
-		this.x = x;
+	public void setAttack(int attack) {
+		this.attack = attack;
 	}
-
-	public double getY() {
-		return y;
+	public int getLives() {
+		return lives;
 	}
-
-	public void setY(double y) {
-		this.y = y;
+	public void setLives(int lives) {	
+		this.lives = lives;
 	}
 
 	public double getxPos() {
@@ -76,21 +87,6 @@ public abstract class Entity {
 		this.yVel = yVel;
 	}
 
-	public double getxAccel() {
-		return xAccel;
-	}
-
-	public void setxAccel(double xAccel) {
-		this.xAccel = xAccel;
-	}
-
-	public double getyAccel() {
-		return yAccel;
-	}
-
-	public void setyAccel(double yAccel) {
-		this.yAccel = yAccel;
-	}
 
 	
 }
