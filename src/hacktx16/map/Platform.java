@@ -1,4 +1,4 @@
-package hacktx16;
+package hacktx16.map;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,7 +49,9 @@ public class Platform extends Line2D {
 	}
 	
 	public void draw(Graphics g) {
-		g.drawLine(x, y, x2, y2);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setStroke(new BasicStroke(1));
+		g2.drawLine(x, y, x2, y2);
 	}
 
 	@Override

@@ -12,11 +12,12 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import hacktx16.entity.Player;
+
 
 public class GameStateManager {
 	
 	private boolean paused;
-	private boolean inInventory;
 	private PauseState pauseState;
 	
 	private GameState[] gameStates;
@@ -42,7 +43,6 @@ public class GameStateManager {
 		
 		dimension = d;
 		paused = false;
-		inInventory = false;
 		pauseState = new PauseState(this, dimension);
 		
 		gameStates = new GameState[NUM_STATES];
@@ -70,7 +70,7 @@ public class GameStateManager {
 			gameStates[i].init();
 		}
 		else if(i == PLAY) {
-			gameStates[i] = new PlayState(this, dimension, difficulty);
+			gameStates[i] = new PlayState(this, dimension);
 			gameStates[i].init();
 		}
 		/*else if(i == GAMEOVER) {

@@ -1,16 +1,12 @@
-package hacktx16;
+package hacktx16.entity;
 
 import java.awt.Graphics2D;
 
-import hacktx16.entity.Entity;
-
 public class Player extends Entity{
-	Player player = new Player();
+	public Player() {
+		
+	}
 	
-	
-	
-	
-
 	void cHealth(int hp){
 		setHealth(100);
 	}
