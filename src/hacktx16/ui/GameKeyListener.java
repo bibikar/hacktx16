@@ -13,14 +13,17 @@ public abstract class GameKeyListener extends JFrame implements KeyListener{
 	}
 	public void keyPressed(KeyEvent e){
 		int keypress = e.getKeyCode();
-		if(keypress == KeyEvent.VK_D){
+		if(keypress == KeyEvent.VK_RIGHT){
 			//go forward method.
 		}
-		if(keypress == KeyEvent.VK_W){
+		if(keypress == KeyEvent.VK_UP){
 			//jump method.
 		}
-		if(keypress == KeyEvent.VK_A){
+		if(keypress == KeyEvent.VK_LEFT){
 			//go left method.
+		}
+		if(keypress == KeyEvent.VK_DOWN){
+			//crouch method.
 		}
 		if(keypress == KeyEvent.VK_SPACE){
 			//fire gun method.
@@ -28,9 +31,8 @@ public abstract class GameKeyListener extends JFrame implements KeyListener{
 		if(keypress == KeyEvent.VK_P){
 			//pause game method
 		}
-		else{
-			//do nothing method. 
-		}
+	}
+	
 	public void keyReleased(KeyEvent txt){
 		
 	}
