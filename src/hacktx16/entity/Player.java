@@ -7,7 +7,8 @@ public class Player extends Entity{
 
 	
 	
-	public Player(String name, int maxHealth, int damage, double xPos, double yPos, double xVel, double yVel){
+	public Player(int lives, String name, int maxHealth, int damage, double xPos, double yPos, double xVel, double yVel){
+		this.lives = lives;
 		this.name = name;
 		this.maxHealth = maxHealth;
 		this.damage = damage;
@@ -29,6 +30,7 @@ public class Player extends Entity{
 	public void damageTaken(Entity monster){
 		
 		int attackValue = monster.getDamage();
+		
 		
 		
 		

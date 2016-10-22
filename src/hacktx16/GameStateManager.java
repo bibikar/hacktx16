@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import hacktx16.entity.Player;
+
 
 public class GameStateManager {
 	
