@@ -7,6 +7,15 @@ public class Camera {
 	double scale;
 	Map map;
 	
+	public Camera(Map map, double x, double y, double xLength, double yLength) {
+		this.map = map;
+		this.x = x;
+		this.y = y;
+		this.xLength = xLength;
+		this.yLength = yLength;
+		scale = 1.0;
+	}
+	
 	/**
 	 * Input absolute coordinates and get display coordinates
 	 * @param x - absolute X coordinate
@@ -36,6 +45,10 @@ public class Camera {
 	
 	public double getScale() {
 		return scale;
+	}
+	
+	public void setScale(double scale) {
+		this.scale = scale;
 	}
 	
 	public double[] getSize() {

@@ -21,7 +21,7 @@ public class PlayState extends GameState {
 
 	@Override
 	public void init() {
-		//player = new Player();
+		player = new Player(1, "Player", 100, 10, 100, 100, 0, 0);
 		map = new Map(dimension.getWidth() * 3, dimension.getHeight());
 		map.addPlatform(new Platform (0,
 				(int)dimension.getHeight(),
