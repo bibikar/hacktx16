@@ -36,18 +36,15 @@ public class Player extends Entity{
 	@Override
 	public void tick() {
 		//skip
-		
+		xPos += xVel;
+		yPos += yVel;
 	}
 
 	@Override
 	public void draw(Graphics2D g) {
-
 	    g.setColor( Color.orange );
-	    g.fillRect( 0, 0, 150, 150 );
-	    g.setColor( Color.black );
-	    int radius = 25;
-	    g.drawOval( (150/2 - radius), (150/2 - radius), radius*2, radius*2 );
-		
+	    g.fillRect( (int)xPos, (int)yPos, 50, 150 );
+		g.setColor(Color.black);
 	}
 	
 	

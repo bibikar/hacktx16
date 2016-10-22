@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import hacktx16.entity.Player;
 import hacktx16.map.Map;
 import hacktx16.map.Platform;
+import hacktx16.map.PlatformLoader;
 
 public class PlayState extends GameState {
 	
@@ -21,18 +22,17 @@ public class PlayState extends GameState {
 
 	@Override
 	public void init() {
-		player = new Player(1, "Player", 100, 10, 100, 100, 0, 0);
+		player = new Player(1, "Player", 100, 10, 50, 50, 0, 0);
 		map = new Map(dimension.getWidth() * 3, dimension.getHeight());
-		map.addPlatform(new Platform (0,
-				(int)dimension.getHeight(),
-				(int)dimension.getWidth(),
-				(int)dimension.getHeight()));
+		map.getPlatforms().addAll(PlatformLoader.loadTestPlatforms());
 	}
 
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-
+		handleInput();
+		map.tickAll();
+		player.tick();
 	}
 
 	@Override
@@ -50,6 +50,20 @@ public class PlayState extends GameState {
 		// TODO Auto-generated method stub
 		if(Keys.isPressed(Keys.ESCAPE)) {
 			gsm.setPaused(true);
+		}
+		if (!Keys.isDown(Keys.A)) {
+			player.setxVel(0);
+		}
+		if (!Keys.isDown(Keys.D)) {
+			player.setxVel(0);
+		}
+		if (Keys.isDown(Keys.A)) {
+			player.setxVel(-2);
+			System.out.println("test");
+		}
+		if (Keys.isDown(Keys.D)) {
+			player.setxVel(2);
+			System.out.println("test2");
 		}
 	}
 

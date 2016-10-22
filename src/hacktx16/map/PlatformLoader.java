@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class PlatformLoader {
 
-	private static String platformTest = "80 0 80 80\n80 90 80 120";
+	private static String platformTest = "0 80 80 80\n90 80 120 80";
 	
 	public static Set<Platform> loadPlatforms(String platformInput) {
 		String[] split = platformInput.split("\n");
