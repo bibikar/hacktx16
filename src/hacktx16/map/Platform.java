@@ -49,9 +49,13 @@ public class Platform extends Line2D {
 	}
 	
 	public void draw(Graphics g) {
+<<<<<<< HEAD
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setStroke(new BasicStroke(1));
 		g2.drawLine(x, y, x2, y2);
+=======
+		g.drawLine(x, y, x2, y2);
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Override

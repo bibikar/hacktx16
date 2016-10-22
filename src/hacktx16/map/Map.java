@@ -4,6 +4,9 @@ import java.awt.Graphics2D;
 import java.util.HashSet;
 import java.util.Set;
 
+
+import javax.imageio.ImageIO;
+
 import hacktx16.entity.Entity;
 
 public class Map {
