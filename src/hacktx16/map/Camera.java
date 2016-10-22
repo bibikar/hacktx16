@@ -5,6 +5,7 @@ public class Camera {
 	double x, y; // in absolute coordinates
 	double xLength, yLength; // these are in absolute coordinates
 	double scale;
+	Map map;
 	
 	/**
 	 * Input absolute coordinates and get display coordinates
@@ -27,5 +28,23 @@ public class Camera {
 		if (y < this.y || y > this.y + yLength) return false;
 		return true;
 	}
+	
+	public void moveTo(double x, double y) {
+		if (x > 0 && x < map.getWidth()) this.x = x;
+		if (y > 0 && y < map.getHeight()) this.y = y;
+	}
+	
+	public double getScale() {
+		return scale;
+	}
+	
+	public double[] getSize() {
+		return new double[] {xLength, yLength};
+	}
+	
+	public Map getMap() {
+		return map;
+	}
+	
 	
 }
