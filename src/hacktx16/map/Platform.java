@@ -1,10 +1,14 @@
 package hacktx16.map;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
 public class Platform extends Line2D {
 	
@@ -101,5 +105,14 @@ public class Platform extends Line2D {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void PlatformPic(){
+		BufferedImage image = null;{
+			try {
+				image = ImageIO.read(new URL("http://imgur.com/a/INFT8"));
+			} catch (IOException e) {
+				System.out.println("WRONG PLATFORM");		
+			}}
+		}
 	
 }
