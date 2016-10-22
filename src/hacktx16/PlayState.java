@@ -12,7 +12,7 @@ public class PlayState extends GameState {
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -30,7 +30,10 @@ public class PlayState extends GameState {
 	@Override
 	public void handleInput() {
 		// TODO Auto-generated method stub
-
+		if(Keys.isPressed(Keys.ESCAPE)) {
+			gsm.setPaused(true);
+			//JukeBox.resumeLoop("music1");
+		}
 	}
 
 }
