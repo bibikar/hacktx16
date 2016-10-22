@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.util.HashSet;
 import java.util.Set;
 
-import hacktx16.Platform;
 import hacktx16.entity.Entity;
 
 public class Map {

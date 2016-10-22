@@ -1,4 +1,4 @@
-package hacktx16;
+package hacktx16.map;
 
 import javax.swing.*;
 import java.awt.*;
