@@ -22,8 +22,12 @@ public class Map {
 		platforms = new HashSet<>();
 	}
 	
-	public void getCamera(Camera camera) {
+	public void setCamera(Camera camera) {
 		this.camera = camera;
+	}
+	
+	public Camera getCamera(Camera camera) {
+		return camera;
 	}
 	
 	public double getHeight() {
