@@ -3,6 +3,8 @@ package hacktx16.entity;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+import hacktx16.map.Camera;
+
 
 public class Player extends Entity{
 	public Player(int lives, String name, int maxHealth, int damage, double xPos, double yPos, double xVel, double yVel){
@@ -41,9 +43,13 @@ public class Player extends Entity{
 	}
 
 	@Override
-	public void draw(Graphics2D g) {
+	public void draw(Graphics2D g, Camera c) {
 	    g.setColor( Color.orange );
-	    g.fillRect( (int)xPos, (int)yPos, 50, 150 );
+	    double[] pos = c.computeDisplayCoordinates(xPos, yPos);
+	    double scale = c.getScale();
+	    int width = 50; 
+	    int height = 100;
+	    g.fillRect( (int) pos[0], (int) pos[1], (int) (width * scale), (int) (height * scale ));
 		g.setColor(Color.black);
 	}
 	

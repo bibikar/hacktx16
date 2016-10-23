@@ -2,6 +2,8 @@ package hacktx16.entity;
 
 import java.awt.Graphics2D;
 
+import hacktx16.map.Camera;
+
 public abstract class Entity {
 	String name; 
 	
@@ -16,7 +18,7 @@ public abstract class Entity {
 	double xVel, yVel;
 	
 	
-	public abstract void draw(Graphics2D g);
+	public abstract void draw(Graphics2D g, Camera camera);
 		
 	
 	public abstract void tick();
