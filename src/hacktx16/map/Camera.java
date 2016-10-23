@@ -7,8 +7,7 @@ public class Camera {
 	double scale;
 	Map map;
 	
-	public Camera(Map map, double x, double y, double xLength, double yLength) {
-		this.map = map;
+	public Camera(double x, double y, double xLength, double yLength) {
 		this.x = x;
 		this.y = y;
 		this.xLength = xLength;
@@ -57,6 +56,10 @@ public class Camera {
 	
 	public Map getMap() {
 		return map;
+	}
+	
+	public void setMap(Map m) {
+		map = m;
 	}
 	
 	
