@@ -42,6 +42,12 @@ public class Camera {
 		if (y > 0 && y < map.getHeight()) this.y = y;
 	}
 	
+	public void moveToPlayer(double x, double y) {
+		double newX = x - xLength / 2;
+		double newY = y - yLength / 2;
+		moveTo(newX, newY);
+	}
+	
 	public double getScale() {
 		return scale;
 	}
