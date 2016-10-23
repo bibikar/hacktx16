@@ -3,6 +3,8 @@ package hacktx16.entity;
 import java.awt.Graphics2D;
 import java.util.Random;
 
+import hacktx16.map.Camera;
+
 public class Monster extends Entity {
 	
 	public Monster(String name, int x, int y, int health, int maxHealth, int attack) {
@@ -15,7 +17,7 @@ public class Monster extends Entity {
 	}
 
 	@Override
-	public void draw(Graphics2D g) {
+	public void draw(Graphics2D g, Camera camera) {
 		// TODO Auto-generated method stub
 		
 	}

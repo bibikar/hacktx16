@@ -3,6 +3,8 @@ package hacktx16.entity;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
+import hacktx16.map.Camera;
+
 
 public class Teleporter extends Entity {
 	
@@ -21,7 +23,7 @@ public class Teleporter extends Entity {
 	}
 	
 	@Override
-	public void draw(Graphics2D g) {
+	public void draw(Graphics2D g, Camera camera) {
 		Teleporter port=new Teleporter();
 		g.drawRect((int)port.xPos,(int)port.yPos,(int)port.health, (int)port.maxHealth);
 		

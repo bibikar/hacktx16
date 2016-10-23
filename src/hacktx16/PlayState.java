@@ -26,8 +26,8 @@ public class PlayState extends GameState {
 	public void init() {
 		player = new Player(1, "Player", 100, 10, 50, 50, 0, 0);
 		map = new Map(dimension.getWidth() * 3, dimension.getHeight());
-		map.getPlatforms().addAll(PlatformLoader.loadTestPlatforms());
 		camera = new Camera(map, 0, 0, dimension.getWidth(), dimension.getHeight());
+		map.getPlatforms().addAll(PlatformLoader.loadTestPlatforms());
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class PlayState extends GameState {
 		g.fillRect(0, 0, (int)dimension.getWidth(), (int)dimension.getHeight());
 		g.setColor(Color.BLACK);
 		map.draw(g);
-		player.draw(g);
+		player.draw(g, camera);
 	}
 
 	@Override

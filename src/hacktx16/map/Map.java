@@ -57,9 +57,9 @@ public class Map {
 	
 	public void draw(Graphics2D g) {
 		for (Platform p : getPlatforms())
-			p.draw(g);
+			p.draw(g, camera);
 		for (Entity e : getEntities())
-			e.draw(g);
+			e.draw(g, camera);
 	}
 	
 }

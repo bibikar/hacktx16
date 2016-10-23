@@ -52,10 +52,12 @@ public class Platform extends Line2D {
 		platform2.setY2(10);
 	}
 	
-	public void draw(Graphics g) {
+	public void draw(Graphics g, Camera camera) {
 		Graphics2D g2 = (Graphics2D)g;
+		double[] pos1 = camera.computeDisplayCoordinates(x, y);
+		double[] pos2 = camera.computeDisplayCoordinates(x2, y2);
 		g2.setStroke(new BasicStroke(3));
-		g2.drawLine(x, y, x2, y2);
+		g2.drawLine((int)pos1[0], (int)pos2[0], (int)pos1[1], (int)pos2[1]);
 	}
 
 	@Override
