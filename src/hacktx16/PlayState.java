@@ -25,11 +25,11 @@ public class PlayState extends GameState {
 	@Override
 	public void init() {
 		camera = new Camera(0, 0, dimension.getWidth(), dimension.getHeight());
-		player = new Player(1, "Player", 100, 10, 50, 50, 0, 0);
 		map = new Map(dimension.getWidth() * 3, dimension.getHeight());
+		map.getPlatforms().addAll(PlatformLoader.loadTestPlatforms());
+		player = new Player(map, 1, "Player", 100, 10, 50, 50, 0, 0);
 		map.setCamera(camera);
 		camera.setMap(map);
-		map.getPlatforms().addAll(PlatformLoader.loadTestPlatforms());
 		
 	}
 

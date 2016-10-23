@@ -2,12 +2,21 @@ package hacktx16.entity;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 import hacktx16.map.Camera;
+import hacktx16.map.Map;
+import hacktx16.map.Platform;
 
 
 public class Player extends Entity{
-	public Player(int lives, String name, int maxHealth, int damage, double xPos, double yPos, double xVel, double yVel){
+	
+	Map map;
+	
+	int width = 25, height = 25;
+	
+	public Player(Map map, int lives, String name, int maxHealth, int damage, double xPos, double yPos, double xVel, double yVel){
+		this.map = map;
 		this.lives = lives;
 		this.name = name;
 		this.maxHealth = maxHealth;
@@ -38,6 +47,15 @@ public class Player extends Entity{
 	@Override
 	public void tick() {
 		//skip
+		yVel += 0.1;
+		Rectangle pRect = new Rectangle();
+		pRect.setBounds((int) xPos, (int) yPos, (int) width, (int) height);
+		System.out.println(map);
+		for (Platform p : map.getPlatforms()) {
+			Rectangle plRect = new Rectangle();
+			plRect.setBounds((int) p.getX1(), (int) p.getY1(), (int) (p.getX2() - p.getX1()), 1);
+			if (pRect.intersects(plRect)) yVel = 0;
+		}
 		xPos += xVel;
 		yPos += yVel;
 	}
@@ -47,8 +65,6 @@ public class Player extends Entity{
 	    g.setColor( Color.orange );
 	    double[] pos = c.computeDisplayCoordinates(xPos, yPos);
 	    double scale = c.getScale();
-	    int width = 50; 
-	    int height = 100;
 	    g.fillRect( (int) pos[0], (int) pos[1], (int) (width * scale), (int) (height * scale ));
 		g.setColor(Color.black);
 	}

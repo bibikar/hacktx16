@@ -57,6 +57,7 @@ public class Map {
 	}
 	
 	public void tickAll() {
+		
 		for (Entity e : getEntities())
 			e.tick();
 	}
