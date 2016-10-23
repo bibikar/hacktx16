@@ -15,9 +15,15 @@ public class Map {
 	Set<Entity> entities;
 	Set<Platform> platforms;
 	
+	Camera camera;
+	
 	public Map(double height, double width) {
 		entities = new HashSet<>();
 		platforms = new HashSet<>();
+	}
+	
+	public void getCamera(Camera camera) {
+		this.camera = camera;
 	}
 	
 	public double getHeight() {

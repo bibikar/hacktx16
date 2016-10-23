@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 
 import hacktx16.entity.Player;
+import hacktx16.map.Camera;
 import hacktx16.map.Map;
 import hacktx16.map.Platform;
 import hacktx16.map.PlatformLoader;
@@ -12,6 +13,7 @@ public class PlayState extends GameState {
 	
 	Dimension dimension;
 	Player player;
+	Camera camera;
 	Map map;
 	
 	public PlayState(GameStateManager gameStateManager, Dimension dimension) {
@@ -25,6 +27,7 @@ public class PlayState extends GameState {
 		player = new Player(1, "Player", 100, 10, 50, 50, 0, 0);
 		map = new Map(dimension.getWidth() * 3, dimension.getHeight());
 		map.getPlatforms().addAll(PlatformLoader.loadTestPlatforms());
+		camera = new Camera(map, 0, 0, dimension.getWidth(), dimension.getHeight());
 	}
 
 	@Override
