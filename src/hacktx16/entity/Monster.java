@@ -17,7 +17,7 @@ public class Monster extends Entity {
 	}
 
 	@Override
-	public void draw(Graphics2D g, Camera camera) {
+	public void draw(Graphics2D g, Camera c) {
 		// TODO Auto-generated method stub
 		
 	}

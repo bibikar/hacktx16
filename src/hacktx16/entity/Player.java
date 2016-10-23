@@ -43,10 +43,13 @@ public class Player extends Entity{
 	}
 
 	@Override
-	public void draw(Graphics2D g, Camera camera) {
+	public void draw(Graphics2D g, Camera c) {
 	    g.setColor( Color.orange );
-	    double[] pos = camera.computeDisplayCoordinates(xPos, yPos);
-	    g.fillRect((int)pos[0], (int)pos[1], 50, 150 );
+	    double[] pos = c.computeDisplayCoordinates(xPos, yPos);
+	    double scale = c.getScale();
+	    int width = 50; 
+	    int height = 100;
+	    g.fillRect( (int) pos[0], (int) pos[1], (int) (width * scale), (int) (height * scale ));
 		g.setColor(Color.black);
 	}
 	

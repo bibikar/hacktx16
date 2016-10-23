@@ -7,6 +7,7 @@ import hacktx16.map.Camera;
 
 
 public class Teleporter extends Entity {
+	int width, height;
 	
 	@Override
 	public void tick() {
@@ -14,8 +15,8 @@ public class Teleporter extends Entity {
 		
 	}
 	public void Size(int width, int height){
-		health=width;
-		maxHealth=height;
+		this.width=width;
+		this.height=height;
 	}
 	public void TelePosition(int x_coor,int y_coor){
 		xPos=x_coor;
@@ -23,9 +24,11 @@ public class Teleporter extends Entity {
 	}
 	
 	@Override
-	public void draw(Graphics2D g, Camera camera) {
+	public void draw(Graphics2D g, Camera c) {
 		Teleporter port=new Teleporter();
-		g.drawRect((int)port.xPos,(int)port.yPos,(int)port.health, (int)port.maxHealth);
+		double[] pos = c.computeDisplayCoordinates(xPos, yPos);
+		double scale = c.getScale();
+		g.drawRect((int) pos[0],(int) pos[1],(int) (width * scale), (int) (height * scale));
 		
 	}
 	
