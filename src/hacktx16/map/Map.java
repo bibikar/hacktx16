@@ -18,6 +18,8 @@ public class Map {
 	Camera camera;
 	
 	public Map(double height, double width) {
+		this.height = height;
+		this.width = width;
 		entities = new HashSet<>();
 		platforms = new HashSet<>();
 	}

@@ -39,7 +39,8 @@ public class PlayState extends GameState {
 		handleInput();
 		map.tickAll();
 		player.tick();
-		camera.moveTo(player.getxPos(), player.getyPos());
+		camera.moveToPlayer(player.getxPos(), player.getyPos());
+		System.out.printf("Camera (%f, %f)\n", camera.getLocation()[0], camera.getLocation()[1]);
 	}
 
 	@Override

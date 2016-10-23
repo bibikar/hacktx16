@@ -38,6 +38,8 @@ public class Camera {
 	}
 	
 	public void moveTo(double x, double y) {
+
+		System.out.printf("Map dims (%f, %f)\n", map.getWidth(), map.getHeight());
 		if (x > 0 && x < map.getWidth()) this.x = x;
 		if (y > 0 && y < map.getHeight()) this.y = y;
 	}
@@ -45,6 +47,7 @@ public class Camera {
 	public void moveToPlayer(double x, double y) {
 		double newX = x - xLength / 2;
 		double newY = y - yLength / 2;
+		System.out.printf("Camera wants to move to (%f, %f)\n", newX, newY);
 		moveTo(newX, newY);
 	}
 	
